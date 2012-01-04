@@ -1,0 +1,137 @@
+#reco_reviews {
+    position: relative;
+    float: left;
+    background-color: #f6fcfe;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-box-shadow: 0 0 4px #a8a8a8;
+    -webkit-box-shadow: 0 0 4px #a8a8a8;
+    box-shadow: 0 0 4px #a8a8a8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#a8a8a8')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#a8a8a8');
+    padding: 10px 20px 5px 20px;
+    margin: 20px 4px 20px 4px;
+}
+#reco_logo {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+}
+
+#reco_logo img {
+	background: none;
+	border: none;
+	margin: none;
+	padding: none;
+}
+
+#reco_reviews_list {
+	list-style:none outside none;
+	float: left;
+	margin:0; 
+	padding-top:15px; 
+	overflow: hidden;
+}
+
+#reco_reviews_list li  {
+	line-height:20px;
+	float: left;
+	padding:5px 0 10px; 
+	width: 100%;
+}
+
+#reco_reviews_list li.last {
+	border-bottom:none;
+	float:left;
+	margin-bottom:0;
+}
+
+.reco_profile_badge {
+	width: 15%;
+	min-width: 100px;
+	display: table-cell;
+	vertical-align: top;
+	border-bottom:1px solid #EEE; 
+	padding-bottom: 20px;
+}
+
+.reco_profile_badge img {
+	padding: 0;
+	margin: 0;
+	background: none; 
+	width: 70px; 
+	height: 70px; 
+	margin: 5px 20px 5px 0; 
+	border: 5px solid #3a5b66;
+}
+
+.reco_user_name a, .reco_user_name a:visited {
+    color: #8da617;
+    font-weight: bold;
+}
+
+.reco_company_name a, .reco_company_name a:visited {
+    color: #000000;
+    font-weight: bold;
+}
+
+.reco_rating_box_small{
+	width:100px;
+	height:20px; 
+	margin-bottom:3px; 
+	background:url(http://www.reco.se/img/sticker/recoSmall.png) no-repeat 0 0;
+}
+
+.reco_rating_box_small div{
+	height:20px;
+	overflow:hidden;
+}
+
+.reco_rating_box_small div img{
+	margin: 0;
+	margin-top:-22px;
+	background: none;
+	border: none;
+	padding: 0;
+	min-height: 42px;
+}
+
+.reco_rating_box_small .rating-stars- {width:0;}
+.reco_rating_box_small .rating-stars-0 {width:0;}
+.reco_rating_box_small .rating-stars-1 {width:20px; background:url(http://www.reco.se/img/sticker/recoSmall.png) no-repeat 0 -22px}
+.reco_rating_box_small .rating-stars-2 {width:40px; background:url(http://www.reco.se/img/sticker/recoSmall.png) no-repeat 0 -22px}
+.reco_rating_box_small .rating-stars-3 {width:60px; background:url(http://www.reco.se/img/sticker/recoSmall.png) no-repeat 0 -22px}
+.reco_rating_box_small .rating-stars-4 {width:80px; background:url(http://www.reco.se/img/sticker/recoSmall.png) no-repeat 0 -22px}
+.reco_rating_box_small .rating-stars-5 {width:100px;background:url(http://www.reco.se/img/sticker/recoSmall.png) no-repeat 0 -22px}
+
+.reco_review_date {
+    text-align: right;
+    margin-right: 3px;
+}
+
+
+#toggle_displayed_reviews {
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+}
+
+#toggle_displayed_reviews:hover {
+    cursor: pointer;
+}
+
+.reco_review_source {
+	width: 100px;
+	display: table-cell;
+	vertical-align: top;
+	border-bottom:1px solid #EEE; 
+	padding-bottom: 20px;
+}
+
+.reco_review_text_box {
+	display: table-cell;
+	vertical-align: top;
+	border-bottom:1px solid #EEE;
+	padding-bottom: 20px; 
+}
