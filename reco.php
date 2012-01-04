@@ -76,7 +76,7 @@ function reco_widget_short_code($atts) {
 
 	echo '<div id="reco_reviews">';
 	echo '<div id="reco_logo">';
-	echo '<a href="http://reco.se/"><img src="http://solenergisystem.se/themes/solenergi/images/reco-logo.png" /></a>';
+	echo '<a href="http://reco.se/"><img src="'. plugins_url('/images/reco-logo.png', __FILE__) .'" /></a>';
 	echo '</div>';
 	echo  '<ul id="reco_reviews_list">';
 	if(is_array($data)) {
