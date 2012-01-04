@@ -127,7 +127,7 @@ function reco_widget_short_code($atts) {
 	
 	$buf .= '</ul><div id="toggle_displayed_reviews"><span>Visa fler</span></div></div>';
 	$buf .= '<script type="text/javascript">';
-	$buf .= ' recoInit(); ';
+	$buf .= ' jQuery(document).ready(function() { recoInit(); });';
 	$buf .= '</script>';
 	
 	return $buf;
