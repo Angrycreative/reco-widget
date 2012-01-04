@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Reco API Widget
+Plugin Name: Reco Widget
 Plugin URI: http://angrycreative.se/projekt/wordpress/reco
 Description: Visar en widget från reco.se
 Version: 0.1
@@ -43,7 +43,10 @@ function reco_widget_setting_company_id_string() {
 
 function reco_widget_setting_num_recos_string() {
 	$options = get_option('reco_widget_options');
+	if(empty($options['reco_widget_setting_num_recos']))
+		$options['reco_widget_setting_num_recos'] = 5;
 	echo "<input id='reco_widget_setting_num_recos' name='reco_widget_options[reco_widget_setting_num_recos]' size='5' type='text' value='{$options['reco_widget_setting_num_recos']}' />";
+	echo "<br/><small>Om du anger -1 som värde så kommer alla recos visas.</small>";
 }
 
 function reco_widget_options_validate($input) {
@@ -53,7 +56,7 @@ function reco_widget_options_validate($input) {
 add_action('wp_enqueue_scripts', 'reco_add_scripts');
 function reco_add_scripts() {
 	$myStyleUrl = plugins_url('css/reco.css', __FILE__);
-	$myStyleFile = WP_PLUGIN_DIR . '/reco/css/reco.css';
+	$myStyleFile = dirname(__FILE__) .'/css/reco.css';
     if ( file_exists($myStyleFile) ) {
         wp_register_style('recoWidgetStyleSheets', $myStyleUrl);
         wp_enqueue_style( 'recoWidgetStyleSheets');
@@ -71,7 +74,13 @@ function reco_widget_short_code($atts) {
 	require(dirname(__FILE__) . '/api.php');
 	$options = get_option('reco_widget_options');
 	$r = new reco($options['reco_widget_setting_api_key'], $options['reco_widget_setting_company_id']);
-	$itemList = $r->getReviews($options['reco_widget_setting_num_recos']);
+	
+	if($options['reco_widget_setting_num_recos'] == '-1') {
+		$numRecos = 999;
+	} else {
+		$numRecos = $options['reco_widget_setting_num_recos'];
+	}
+	$itemList = $r->getReviews($numRecos);
 	$data = $itemList->reviews;
 
 	echo '<div id="reco_reviews">';
