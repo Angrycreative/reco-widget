@@ -83,49 +83,52 @@ function reco_widget_short_code($atts) {
 	$itemList = $r->getReviews($numRecos);
 	$data = $itemList->reviews;
 
-	echo '<div id="reco_reviews">';
-	echo '<div id="reco_logo">';
-	echo '<a href="http://reco.se/"><img src="'. plugins_url('/images/reco-logo.png', __FILE__) .'" /></a>';
-	echo '</div>';
-	echo  '<ul id="reco_reviews_list">';
+	$buf = '';
+	$buf .= '<div id="reco_reviews">';
+	$buf .= '<div id="reco_logo">';
+	$buf .= '<a href="http://reco.se/"><img src="'. plugins_url('/images/reco-logo.png', __FILE__) .'" /></a>';
+	$buf .= '</div>';
+	$buf .=  '<ul id="reco_reviews_list">';
 	if(is_array($data)) {
 		foreach(array_keys($data) as $i) {
-			echo '<li id="reco_review_item_'; 
-			echo $i+1; 
-			echo '" class="reco_review_item">';
-            echo '   <div class="reco_profile_badge">';
-            echo '        <a target="_blank" href="http://www.reco.se/friends/profile.seam?friendId='. $data[$i]->reviewer->id .'">';
-            echo '           <img src="'. $data[$i]->reviewer->thumbPicture .'" alt="'. $data[$i]->reviewer->screenName .'" width="70" height="70" class="reco_profile_pic" />';
-            echo '       </a>';
-            echo '   </div>';
+			$buf .= '<li id="reco_review_item_'; 
+			$buf .= $i+1; 
+			$buf .= '" class="reco_review_item">';
+            $buf .= '   <div class="reco_profile_badge">';
+            $buf .= '        <a target="_blank" href="http://www.reco.se/friends/profile.seam?friendId='. $data[$i]->reviewer->id .'">';
+            $buf .= '           <img src="'. $data[$i]->reviewer->thumbPicture .'" alt="'. $data[$i]->reviewer->screenName .'" width="70" height="70" class="reco_profile_pic" />';
+            $buf .= '       </a>';
+            $buf .= '   </div>';
 
 			
-            echo '    <div class="reco_review_text_box">';
-            echo '       <span class="reco_user_name">';
-            echo '            <a target="_blank" href="http://www.reco.se/friends/profile.seam?friendId='. $data[$i]->reviewer->id .'">'. $data[$i]->reviewer->screenName .'</a>';
-            echo '        </span> skrev om <span class="reco_company_name"><a href="http://www.reco.se/'. $itemList->restfulIdentifier .'">'. $itemList->name .'</a></span>: <br/>';
-            echo  $data[$i]->text;
-            echo '    </div>';
+            $buf .= '    <div class="reco_review_text_box">';
+            $buf .= '       <span class="reco_user_name">';
+            $buf .= '            <a target="_blank" href="http://www.reco.se/friends/profile.seam?friendId='. $data[$i]->reviewer->id .'">'. $data[$i]->reviewer->screenName .'</a>';
+            $buf .= '        </span> skrev om <span class="reco_company_name"><a href="http://www.reco.se/'. $itemList->restfulIdentifier .'">'. $itemList->name .'</a></span>: <br/>';
+            $buf .=  $data[$i]->text;
+            $buf .= '    </div>';
 			
-            echo '<div class="reco_review_source twocol last">';
-            echo '   <div class="reco_rating_box_small">';
-            echo '       <div class="rating-stars-'. $data[$i]->grade .'">';
-            echo '       </div>';
-            echo '   </div>';
-            echo '    <div class="reco_review_date">';
-            echo         $r->decodeDate($data[$i]->created);
-            echo '   </div>';
-            echo '</div>';
+            $buf .= '<div class="reco_review_source twocol last">';
+            $buf .= '   <div class="reco_rating_box_small">';
+            $buf .= '       <div class="rating-stars-'. $data[$i]->grade .'">';
+            $buf .= '       </div>';
+            $buf .= '   </div>';
+            $buf .= '    <div class="reco_review_date">';
+            $buf .=         $r->decodeDate($data[$i]->created);
+            $buf .= '   </div>';
+            $buf .= '</div>';
 			
 
 
 			
-			echo '</li>';
+			$buf .= '</li>';
 		}
 	}
 	
-	echo '</ul><div id="toggle_displayed_reviews"><span>Visa fler</span></div></div>';
-	echo '<script type="text/javascript">';
-	echo ' recoInit(); ';
-	echo '</script>';
+	$buf .= '</ul><div id="toggle_displayed_reviews"><span>Visa fler</span></div></div>';
+	$buf .= '<script type="text/javascript">';
+	$buf .= ' recoInit(); ';
+	$buf .= '</script>';
+	
+	return $buf;
 }

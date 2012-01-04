@@ -30,15 +30,16 @@
 	list-style:none outside none;
 	float: left;
 	margin:0; 
-	padding-top:15px; 
+	padding: 15px 0 0 0 !important; 
 	overflow: hidden;
 }
 
 #reco_reviews_list li  {
 	line-height:20px;
 	float: left;
-	padding:5px 0 10px; 
+	padding:5px 0 10px !important; 
 	width: 100%;
+	list-style: none;
 }
 
 #reco_reviews_list li.last {
