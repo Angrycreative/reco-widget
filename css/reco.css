@@ -27,7 +27,7 @@
 }
 
 #reco_reviews_list {
-	list-style:none outside none;
+	list-style:none outside none !important;
 	float: left;
 	margin:0; 
 	padding: 15px 0 0 0 !important; 
@@ -39,7 +39,7 @@
 	float: left;
 	padding:5px 0 10px !important; 
 	width: 100%;
-	list-style: none;
+	list-style: none outside none !important;
 }
 
 #reco_reviews_list li.last {
