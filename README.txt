@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: plux
+Contributors: plux, angrycreative
 Tags: reco, widget, recommendation, recos
 Requires at least: 3.0
 Tested up to: 3.3.1
