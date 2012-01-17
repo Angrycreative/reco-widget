@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Reco Widget
-Plugin URI: http://angrycreative.se/projekt/wordpress/reco
+Plugin URI: http://www.angrycreative.se/oppen-kallkod/reco-for-wordpress/
 Description: Visar en widget från reco.se
 Version: 0.1
 Author: Angry Creative AB
