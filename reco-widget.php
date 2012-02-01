@@ -3,7 +3,7 @@
 Plugin Name: Reco Widget
 Plugin URI: http://www.angrycreative.se/oppen-kallkod/reco-for-wordpress/
 Description: Visar en widget från reco.se
-Version: 0.1
+Version: 0.2
 Author: Angry Creative AB
 Author URI: http://angrycreative.se
 License: GPLv2
@@ -104,7 +104,7 @@ function reco_widget_short_code($atts) {
             $buf .= '    <div class="reco_review_text_box">';
             $buf .= '       <span class="reco_user_name">';
             $buf .= '            <a target="_blank" href="http://www.reco.se/friends/profile.seam?friendId='. $data[$i]->reviewer->id .'">'. $data[$i]->reviewer->screenName .'</a>';
-            $buf .= '        </span> skrev om <span class="reco_company_name"><a href="http://www.reco.se/'. $itemList->restfulIdentifier .'">'. $itemList->name .'</a></span>: <br/>';
+            $buf .= '        </span> skrev om <span class="reco_company_name"><a href="'. $itemList->restfulIdentifier .'">'. $itemList->name .'</a></span>: <br/>';
             $buf .=  $data[$i]->text;
             $buf .= '    </div>';
 			
