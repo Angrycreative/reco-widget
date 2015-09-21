@@ -73,7 +73,7 @@ add_shortcode('reco-widget', 'reco_widget_short_code');
 function reco_widget_short_code($atts) {
 	require(dirname(__FILE__) . '/api.php');
 	$options = get_option('reco_widget_options');
-	$r = new reco($options['reco_widget_setting_api_key'], $options['reco_widget_setting_company_id']);
+	$r = new Reco($options['reco_widget_setting_api_key'], $options['reco_widget_setting_company_id']);
 	
 	if($options['reco_widget_setting_num_recos'] == '-1') {
 		$numRecos = 999;
