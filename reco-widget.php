@@ -95,7 +95,7 @@ function reco_widget_short_code($atts) {
 			$buf .= $i+1; 
 			$buf .= '" class="reco_review_item">';
             $buf .= '   <div class="reco_profile_badge">';
-            $buf .= '        <a target="_blank" href="http://www.reco.se/friends/profile.seam?friendId='. $data[$i]->reviewer->id .'">';
+            $buf .= '        <a target="_blank" href="http://www.reco.se/profile/'. $data[$i]->reviewer->id .'">';
             $buf .= '           <img src="'. $data[$i]->reviewer->thumbPicture .'" alt="'. $data[$i]->reviewer->screenName .'" width="70" height="70" class="reco_profile_pic" />';
             $buf .= '       </a>';
             $buf .= '   </div>';
@@ -103,7 +103,7 @@ function reco_widget_short_code($atts) {
 			
             $buf .= '    <div class="reco_review_text_box">';
             $buf .= '       <span class="reco_user_name">';
-            $buf .= '            <a target="_blank" href="http://www.reco.se/friends/profile.seam?friendId='. $data[$i]->reviewer->id .'">'. $data[$i]->reviewer->screenName .'</a>';
+            $buf .= '            <a target="_blank" href="http://www.reco.se/profile/'. $data[$i]->reviewer->id .'">'. $data[$i]->reviewer->screenName .'</a>';
             $buf .= '        </span> skrev om <span class="reco_company_name"><a href="'. $itemList->restfulIdentifier .'">'. $itemList->name .'</a></span>: <br/>';
             $buf .=  $data[$i]->text;
             $buf .= '    </div>';
