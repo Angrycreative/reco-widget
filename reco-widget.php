@@ -118,10 +118,10 @@ function reco_widget_short_code($atts) {
             $buf .= '   </div>';
             $buf .= '</div>';
 			
-
-
-			
 			$buf .= '</li>';
+
+            if (($i+1) == $numRecos) break;
+
 		}
 	}
 	
