@@ -1,9 +1,9 @@
 === Plugin Name ===
-Contributors: plux, angrycreative
+Contributors: plux, angrycreative, wilsoncreative
 Tags: reco, widget, recommendation, recos
 Requires at least: 3.0
-Tested up to: 3.3.1
-Stable tag: 0.2
+Tested up to: 4.3.1
+Stable tag: 0.3
 
 A small plugin to show a realtime widget from the Swedish site reco.se.
 At the moment you must contact reco.se to be able to use this plugin.
@@ -31,12 +31,11 @@ e.g.
 
 == Changelog ==
 
+= 0.3 = 
+* Much needed update to the new repo, kindly contributed by wilsoncreative! Thanks! 
+
 = 0.2 =
-Fixing a small issue with incorrect links.
+* Fixing a small issue with incorrect links.
 
 = 0.1 =
 * Initial version.
-
-
-
-
