@@ -8,11 +8,11 @@ class Reco {
 	public function __construct($apiKey, $companyId) {
 		$this->_apiKey = $apiKey;
 		$this->_companyId = $companyId;
-		$this->_apiUrl = "https://www.reco.se/seam/resource/restv1/company/";
+		$this->_apiUrl = "https://api.reco.se/venue/";
 	}
 
 	public function getReviews($numItems = 0, $reviewSort = "DESC") {
-		$url = sprintf("%s%s?apiKey=%s&limit=%d",
+		$url = sprintf("%s%s/reviews?apiKey=%s&limit=%d",
 		$this->_apiUrl,
 		$this->_companyId,
 		$this->_apiKey,

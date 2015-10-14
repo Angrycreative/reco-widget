@@ -73,7 +73,7 @@ add_shortcode('reco-widget', 'reco_widget_short_code');
 function reco_widget_short_code($atts) {
 	require(dirname(__FILE__) . '/api.php');
 	$options = get_option('reco_widget_options');
-	$r = new reco($options['reco_widget_setting_api_key'], $options['reco_widget_setting_company_id']);
+	$r = new Reco($options['reco_widget_setting_api_key'], $options['reco_widget_setting_company_id']);
 	
 	if($options['reco_widget_setting_num_recos'] == '-1') {
 		$numRecos = 999;
@@ -95,7 +95,7 @@ function reco_widget_short_code($atts) {
 			$buf .= $i+1; 
 			$buf .= '" class="reco_review_item">';
             $buf .= '   <div class="reco_profile_badge">';
-            $buf .= '        <a target="_blank" href="http://www.reco.se/friends/profile.seam?friendId='. $data[$i]->reviewer->id .'">';
+            $buf .= '        <a target="_blank" href="http://www.reco.se/profile/'. $data[$i]->reviewer->id .'">';
             $buf .= '           <img src="'. $data[$i]->reviewer->thumbPicture .'" alt="'. $data[$i]->reviewer->screenName .'" width="70" height="70" class="reco_profile_pic" />';
             $buf .= '       </a>';
             $buf .= '   </div>';
@@ -103,7 +103,7 @@ function reco_widget_short_code($atts) {
 			
             $buf .= '    <div class="reco_review_text_box">';
             $buf .= '       <span class="reco_user_name">';
-            $buf .= '            <a target="_blank" href="http://www.reco.se/friends/profile.seam?friendId='. $data[$i]->reviewer->id .'">'. $data[$i]->reviewer->screenName .'</a>';
+            $buf .= '            <a target="_blank" href="http://www.reco.se/profile/'. $data[$i]->reviewer->id .'">'. $data[$i]->reviewer->screenName .'</a>';
             $buf .= '        </span> skrev om <span class="reco_company_name"><a href="'. $itemList->restfulIdentifier .'">'. $itemList->name .'</a></span>: <br/>';
             $buf .=  $data[$i]->text;
             $buf .= '    </div>';
@@ -118,10 +118,10 @@ function reco_widget_short_code($atts) {
             $buf .= '   </div>';
             $buf .= '</div>';
 			
-
-
-			
 			$buf .= '</li>';
+
+            if (($i+1) == $numRecos) break;
+
 		}
 	}
 	
